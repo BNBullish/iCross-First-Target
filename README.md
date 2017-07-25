@@ -7,7 +7,7 @@
 To building specific toolchain with crosstool-ng, which can meet the following requirements:
 
 1. Compile C codes with C99 standard
-2. Compile C++ codes with C++003 standard
+2. Compile C++ codes with C++03 standard
 3. The executable binary compiled by that can run in RHEL6.0 and later version.
 
 
@@ -61,7 +61,7 @@ ct-ng x86_64-unknown-linux-gnu
 ct-ng menuconfig
 ```
 
-- ​
+- ​Set some choices like 'Save intermediate steps'
 
 - Set Directory following what have been created before
 
