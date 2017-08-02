@@ -24,7 +24,7 @@
 
   ​
 
-![struction](./struction.png)
+![struction](../png/struction.png)
 
 
 
