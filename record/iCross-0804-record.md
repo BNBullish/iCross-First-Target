@@ -36,6 +36,7 @@
           touch $@
   $(objpfx)stamp%: $(make-target-directory)
           touch $@
+  注意touch前面应该为一个tab,不能是八个空格
   ```
 
   ​
