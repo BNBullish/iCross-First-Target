@@ -39,11 +39,44 @@
   注意touch前面应该为一个tab,不能是八个空格
   ```
 
-  ​
+- 之后遇到了
+
+  ```
+  [ERROR]    ../sysdeps/ieee754/dbl-64/s_signbit.c:26:1: error: redefinition of '__signbit'
+  [ALL  ]     __signbit (double x)
+  [ALL  ]     ^
+  [ALL  ]    In file included from ../include/sys/cdefs.h:3:0,
+  [ALL  ]                     from ../include/features.h:323,
+  [ALL  ]                     from ../math/math.h:28,
+  [ALL  ]                     from ../include/math.h:3,
+  [ALL  ]                     from ../sysdeps/ieee754/dbl-64/s_signbit.c:21:
+  [ALL  ]    ../sysdeps/x86_64/fpu/bits/mathinline.h:42:8: note: previous definition of '__signbit' was here
+  [ALL  ]     __NTH (__signbit (double __x))
+  [ALL  ]            ^
+  [ALL  ]    ../misc/sys/cdefs.h:48:52: note: in definition of macro '__NTH'
+  [ALL  ]     #  define __NTH(fct) __attribute__ ((__nothrow__)) fct
+  [ALL  ]                                                        ^
+  [ERROR]    gmake[3]: *** [/home/lk/b2/.build/x86_64-B2-linux-gnu/build/build-libc-final/math/s_signbit.o] Error 1
+  [ALL  ]    gmake[3]: *** Waiting for unfinished jobs....
+  [ALL  ]    gmake[3]: Leaving directory `/home/lk/b2/.build/src/glibc-2.4/math'
+  [ERROR]    gmake[2]: *** [math/subdir_lib] Error 2
+  [ALL  ]    gmake[2]: Leaving directory `/home/lk/b2/.build/src/glibc-2.4'
+  [ERROR]    gmake[1]: *** [all] Error 2
+  [ALL  ]    gmake[1]: Leaving directory `/home/lk/b2/.build/x86_64-B2-linux-gnu/build/build-libc-final'
+  [ERROR]
+  [ERROR]  >>
+  [ERROR]  >>  Build failed in step 'Installing C library'
+  [ERROR]  >>        called in step '(top-level)'
+  [ERROR]  >>
+  ```
+
+  据说是glibc版本问题，遂尝试B3
 
 ##### FT23 : ct1.16 + K 2.6.31 + B 2.19.1a + g 2.5 + G 4.6.3
 
 ##### B3 :  相比 B2 对2.4的glibc加了patch
+
+- 结果仍然遇到了B2的问题
 
 
 
